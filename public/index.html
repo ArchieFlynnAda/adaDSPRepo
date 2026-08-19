@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ada Voices — real stories from Ada Manchester</title>
+
+<!-- ============================================================
+  AIO/SEO note for judges: in production these meta tags + JSON-LD
+  schema are what make ChatGPT / Perplexity / Google surface Ada.
+  They are real and live in this file. See the design doc.
+============================================================ -->
+<meta name="description" content="Real students and graduates from across Greater Manchester on what a Digital T Level at Ada Manchester is actually like — the worries before starting, the placement, and where they ended up. Honest, unscripted, no marketing spin." />
+<meta property="og:title" content="Ada Voices — don't take the college's word for it, take theirs" />
+<meta property="og:description" content="Honest stories from Ada Manchester T Level students and grads, from Salford to Stockport." />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Ada, the National College for Digital Skills — Manchester",
+  "description": "Free, two-year Digital T Levels in Manchester. Equivalent to three A Levels, with a 45-day industry placement.",
+  "areaServed": "Greater Manchester",
+  "alumni": [
+    {"@type":"Person","name":"Maryam","alumniOf":"Ada Manchester","worksFor":"HSBC"},
+    {"@type":"Person","name":"Daniel","alumniOf":"Ada Manchester","worksFor":"ClearScore"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#" onclick="goHome();return false;" aria-label="Ada Voices home">
+      <span class="brand-tile">ada</span>
+      <span class="brand-name">National College<br>for Digital Skills</span>
+      <span class="brand-voices">Voices</span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#stories" onclick="goHome('stories')">Stories</a>
+      <a href="#parents" onclick="goHome('parents')">For parents</a>
+      <a href="#share" onclick="goHome('share')">Share your story</a>
+      <a href="#discover" onclick="goHome('discover')">How people find us</a>
+      <a class="btn btn-primary" href="#openday" onclick="goHome('openday')">Book an open day</a>
+    </nav>
+    <button class="nav-burger" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<!-- ===================== HOME VIEW ===================== -->
+<main id="view-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="found-pill"><span class="found-dot"></span> Found this via <b>Google</b> &nbsp;·&nbsp; or asking <b>ChatGPT</b> about T Levels? That's the point.</span>
+        <p class="eyebrow">Ada Manchester — Digital T Levels</p>
+        <h1>Don't take the college's word for it. <span class="swap">Take theirs.</span></h1>
+        <p class="lede">Real students and graduates from across Greater Manchester — the worries before starting, what placement was actually like, and where they ended up. Filter to someone whose story sounds like yours.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#stories" onclick="goHome('stories')">Find someone like you</a>
+          <a class="btn btn-ghost btn-lg" href="#parents" onclick="goHome('parents')">For parents &amp; carers</a>
+        </div>
+        <div class="hero-stats">
+          <div class="s"><b>Free</b><span>two-year course</span></div>
+          <div class="s"><b>= 3 A Levels</b><span>worth UCAS points</span></div>
+          <div class="s"><b>45 days</b><span>real industry placement</span></div>
+        </div>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="dframe d1 float"><div class="inner"><span class="ini">M</span><span class="meta">Salford → HSBC</span></div><span class="play" style="right:12px;top:12px;">▶</span></div>
+        <div class="dframe d2 float b"><div class="inner"><span class="ini">D</span><span class="meta">Oldham → ClearScore</span></div></div>
+        <div class="dframe d3 float c"><div class="inner"><span class="ini">A</span><span class="meta">Bolton → QMUL</span></div></div>
+        <div class="dframe d4 float d"><div class="inner"><span class="ini">R</span><span class="meta">Wigan → Airbus</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY WALL + FILTERS -->
+  <section class="section" id="stories">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The wall</p>
+        <h2>Find someone like you</h2>
+        <p>Every story is unscripted. Filter by the route, by what they were unsure about before they started, or by where they're from.</p>
+      </div>
+
+      <div class="filterbar" role="group" aria-label="Filter stories">
+        <div class="fg">
+          <div class="fg-label">Career path</div>
+          <div class="chips" data-group="route">
+            <button class="chip build" aria-pressed="false" data-tag="build"><span class="dot"></span>Build it (Production &amp; Dev)</button>
+            <button class="chip support" aria-pressed="false" data-tag="support"><span class="dot"></span>Support &amp; secure it</button>
+            <button class="chip analyse" aria-pressed="false" data-tag="analyse"><span class="dot"></span>Make sense of data</button>
+          </div>
+        </div>
+        <div class="fg">
+          <div class="fg-label">What I was unsure about</div>
+          <div class="chips" data-group="worry">
+            <button class="chip" aria-pressed="false" data-tag="behind">Falling behind</button>
+            <button class="chip" aria-pressed="false" data-tag="alevels">Choosing this over A Levels</button>
+            <button class="chip" aria-pressed="false" data-tag="uni">Whether uni was still possible</button>
+            <button class="chip" aria-pressed="false" data-tag="money">Needing a job fast</button>
+            <button class="chip" aria-pressed="false" data-tag="fit">Not fitting the "tech" type</button>
+            <button class="chip" aria-pressed="false" data-tag="support-need">Needing extra support</button>
+          </div>
+        </div>
+        <div class="fg">
+          <div class="fg-label">Background</div>
+          <div class="chips" data-group="bg">
+            <button class="chip" aria-pressed="false" data-tag="women">Young woman in tech</button>
+            <button class="chip" aria-pressed="false" data-tag="firstfam">First in family</button>
+            <button class="chip" aria-pressed="false" data-tag="lowincome">Low-income background</button>
+            <button class="chip" aria-pressed="false" data-tag="send">Got SEND support</button>
+          </div>
+        </div>
+        <div class="filter-foot">
+          <span class="filter-count">Showing <b id="count">8</b> of 8 stories</span>
+          <button class="link-reset" id="reset" style="display:none" onclick="resetFilters()">Clear filters</button>
+        </div>
+      </div>
+
+      <div class="wall" id="wall"><!-- cards injected by JS --></div>
+    </div>
+  </section>
+
+  <!-- DISCOVERABILITY -->
+  <section class="section wash" id="discover">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The quiet bit that does the work</p>
+        <h2>How people find these stories</h2>
+        <p>No paid ads. The platform is built to show up at the exact moment a 16-year-old — or their parent — is searching, including when they ask an AI.</p>
+      </div>
+      <div class="disc-grid">
+        <div class="disc-card">
+          <div class="disc-tag"><span class="b">SEO</span> A Google search a Year 11 actually makes</div>
+          <div class="serp-q">🔎 <span>is a t level worth it for tech jobs manchester</span></div>
+          <div class="serp-result">
+            <div class="url">adacollege.ac.uk › voices › is-a-t-level-worth-it</div>
+            <div class="title">Is a T Level worth it? 8 Manchester students answer honestly</div>
+            <div class="snip">Real graduates from <span class="mark">Salford, Oldham and Bolton</span> on whether their Digital T Level led to a job, an apprenticeship or university — and what they'd tell their younger self…</div>
+          </div>
+        </div>
+        <div class="disc-card">
+          <div class="disc-tag"><span class="b">AIO</span> What an AI assistant says back</div>
+          <p class="ai-line">"Yes — for digital and tech roles in Greater Manchester, T Levels are well regarded. For example, students at <b>Ada Manchester</b> have gone on to roles at HSBC and ClearScore, and to universities like Queen Mary and Newcastle, after a 45-day industry placement.<span class="ai-cite">Ada Voices</span>"</p>
+          <p class="ai-foot">Structured content + schema markup means assistants like ChatGPT and Perplexity cite Ada's own students, not a random forum thread.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARENT HUB -->
+  <section class="section" id="parents">
+    <div class="wrap">
+      <div class="parent-hero">
+        <p class="eyebrow">For parents &amp; carers</p>
+        <h2>A straight answer about T Levels — credibility first.</h2>
+        <p>You want to know it's safe, it's respected, and it leads somewhere. No spin: here's exactly where students go, what a T Level is and isn't, and the support wrapped around your child.</p>
+        <a class="btn btn-primary btn-lg" href="#openday" onclick="goHome('openday')">Talk to the team at an open day</a>
+      </div>
+
+      <div class="dest-grid">
+        <div class="panel">
+          <h3>Where students go next</h3>
+          <p class="sub">A sample of destinations from Ada graduates and placement students.</p>
+          <div style="margin-bottom:18px;">
+            <div style="font-size:13px;font-weight:700;color:var(--muted);margin-bottom:9px;">Employers &amp; placement partners</div>
+            <div class="logo-chips">
+              <span class="lc"><span class="d"></span>HSBC</span>
+              <span class="lc"><span class="d"></span>Airbus</span>
+              <span class="lc"><span class="d"></span>ClearScore</span>
+              <span class="lc"><span class="d"></span>Deloitte</span>
+              <span class="lc"><span class="d"></span>PwC</span>
+              <span class="lc"><span class="d"></span>Royal London</span>
+              <span class="lc"><span class="d"></span>Bank of America</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--muted);margin-bottom:9px;">Universities</div>
+            <div class="logo-chips uni">
+              <span class="lc"><span class="d"></span>Queen Mary, London</span>
+              <span class="lc"><span class="d"></span>Newcastle</span>
+              <span class="lc"><span class="d"></span>Manchester Met</span>
+              <span class="lc"><span class="d"></span>Leeds</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>What the first cohort did</h3>
+          <p class="sub">Where students headed after their Digital T Level.</p>
+          <div class="split-bar">
+            <span style="width:46%;background:var(--ada-orange);">46% job / apprenticeship</span>
+            <span style="width:38%;background:var(--support);">38% university</span>
+            <span style="width:16%;background:var(--analyse);">16%</span>
+          </div>
+          <div class="legend">
+            <span><i style="background:var(--ada-orange)"></i>Employment &amp; apprenticeships</span>
+            <span><i style="background:var(--support)"></i>University</span>
+            <span><i style="background:var(--analyse)"></i>Further study / other</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="honesty">
+        <div class="is">
+          <h4>✓ &nbsp;What a T Level <u>is</u></h4>
+          <ul>
+            <li>A Level 3 qualification equivalent to three A Levels.</li>
+            <li>Worth UCAS points — it can lead to university.</li>
+            <li>Built with employers, with a 45-day real placement.</li>
+            <li>A strong route into a skilled job or degree apprenticeship.</li>
+          </ul>
+        </div>
+        <div class="isnt">
+          <h4>! &nbsp;What it <u>isn't</u> (the honest part)</h4>
+          <ul>
+            <li>Not accepted by every single university course — some still ask for A Levels.</li>
+            <li>Not a light option: it's a serious, full-time commitment.</li>
+            <li>Not the right fit if your child wants a broad, non-technical mix of subjects.</li>
+            <li>Still newer than A Levels — so awareness varies (which is why this page exists).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="support-row">
+        <div class="support-card">
+          <div class="ic">♥</div>
+          <h4>Pastoral care</h4>
+          <p>Small cohorts, named tutors, and regular check-ins. Students aren't a number here.</p>
+        </div>
+        <div class="support-card">
+          <div class="ic">◈</div>
+          <h4>SEND provision</h4>
+          <p>Support plans, assistive tech and exam access arrangements — read Jordan's story for how that worked in practice.</p>
+        </div>
+        <div class="support-card">
+          <div class="ic">£</div>
+          <h4>Financial support</h4>
+          <p>Free course, plus help with travel and equipment for eligible students. No one's priced out.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details class="faq-item" open>
+          <summary class="faq-q">"Is this just a backdoor because they couldn't get the grades?" <span class="pm">+</span></summary>
+          <div class="faq-a">No. T Levels are demanding Level 3 qualifications with entry requirements, and many students choose them over A Levels because they want the hands-on, career-focused route — not because it's easier. The stories on this site include students who turned down sixth-form A Level offers.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">"Will my child be safe on a placement with a company?" <span class="pm">+</span></summary>
+          <div class="faq-a">Placements are with vetted employer partners and are supported and monitored by the college, with safeguarding agreements in place. Students are prepared for placement and have a college contact throughout.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">"Can they still go to university afterwards?" <span class="pm">+</span></summary>
+          <div class="faq-a">Yes — a T Level carries UCAS points and graduates have progressed to universities including Queen Mary and Newcastle. We're transparent that not every course at every university accepts T Levels, so it's worth checking specific courses, and the team can help with that.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHARE YOUR STORY (MVP: POSTs to /api/stories/submit) -->
+  <section class="section" id="share">
+    <div class="wrap">
+      <p class="eyebrow">Add your voice</p>
+      <h2 class="h2">Done a T Level at Ada? Tell the next lot.</h2>
+      <div class="share-grid">
+        <div>
+          <p class="lede" style="margin-top:10px">One honest quote is enough to start. What did you worry about before you applied &mdash; and how did it actually turn out? Your story goes into a review queue before it appears on the wall.</p>
+          <p class="api-status" id="apiStatus" aria-live="polite"></p>
+        </div>
+        <form class="share-form" id="shareForm" novalidate>
+          <label for="sfName">First name</label>
+          <input id="sfName" name="name" type="text" autocomplete="given-name" maxlength="40" required />
+          <label for="sfRoute">Your T Level route</label>
+          <select id="sfRoute" name="route" required>
+            <option value="">Choose a route&hellip;</option>
+            <option value="build">Production, Design &amp; Development</option>
+            <option value="support">Digital Support Services</option>
+            <option value="analyse">Digital Business Services</option>
+          </select>
+          <label for="sfQuote">Your one-line story</label>
+          <textarea id="sfQuote" name="quote" maxlength="220" required placeholder="I thought&hellip; but actually&hellip;"></textarea>
+          <button class="btn btn-primary btn-lg" type="submit" style="margin-top:16px;width:100%">Send my story</button>
+          <p class="share-msg" id="shareMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN DAY -->
+  <section class="section" id="openday">
+    <div class="wrap">
+      <div class="cta-band">
+        <p class="eyebrow" style="color:#FFEAD6">The next step</p>
+        <h2>Ready to see it in person?</h2>
+        <p>Come to an open day in central Manchester. Meet the students whose stories you've just watched, see the labs, and bring whoever you like.</p>
+        <div class="date-chips" id="dateChips" role="group" aria-label="Choose an open day">
+          <button class="date-chip" aria-pressed="false"><b>Sat 12 Jul</b>10am–1pm</button>
+          <button class="date-chip" aria-pressed="false"><b>Wed 16 Jul</b>4pm–6pm</button>
+          <button class="date-chip" aria-pressed="false"><b>Sat 26 Jul</b>10am–1pm</button>
+        </div>
+        <div class="cta-form" id="ctaForm">
+          <input type="email" id="ctaEmail" placeholder="Your email" aria-label="Your email" />
+          <button class="btn btn-primary btn-lg" onclick="bookOpenDay()">Save my spot</button>
+        </div>
+        <div class="cta-confirm" id="ctaConfirm">
+          <span class="tick">✓</span>
+          <span id="ctaConfirmText">You're on the list. We'll email the details — forward them to a parent or mate if you want to bring someone.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== STORY DETAIL VIEW ===================== -->
+<main id="view-story">
+  <div class="wrap story-top">
+    <a class="back-link" href="#" onclick="goHome('stories');return false;">← Back to all stories</a>
+    <div class="story-head">
+      <div class="story-portrait" id="sp-portrait">M</div>
+      <div>
+        <h1 id="sp-name">Maryam</h1>
+        <div class="where" id="sp-where">17 · Salford · Digital Support Services</div>
+        <div class="story-now-badge"><span class="d"></span><span id="sp-now">Now: Cyber Security apprentice at HSBC</span></div>
+      </div>
+    </div>
+
+    <div class="player" id="sp-player">
+      <span class="unscripted">● Unscripted</span>
+      <button class="pbtn" onclick="alert('Prototype: this is where the student\'s 2-minute video plays.\\n\\nReal videos are sourced with explicit GDPR consent — see the design doc content pipeline.')" aria-label="Play video">▶</button>
+      <span class="rt" id="sp-rt">2:14</span>
+    </div>
+    <div class="chapters">
+      <span class="cap"><span class="n">01</span> Before I started</span>
+      <span class="cap"><span class="n">02</span> My placement</span>
+      <span class="cap"><span class="n">03</span> Where I am now</span>
+    </div>
+
+    <div class="story-body">
+      <article>
+        <div class="chapter">
+          <div class="lab">01 — Before I started</div>
+          <h3 id="ch1-h">"I thought everyone would already know how to code."</h3>
+          <p id="ch1-p"></p>
+          <div class="pullquote" id="ch1-q"></div>
+        </div>
+        <div class="chapter">
+          <div class="lab">02 — My placement</div>
+          <h3 id="ch2-h">What placement was actually like</h3>
+          <p id="ch2-p"></p>
+        </div>
+        <div class="chapter">
+          <div class="lab">03 — Where I am now</div>
+          <h3 id="ch3-h">Where it led</h3>
+          <p id="ch3-p"></p>
+        </div>
+      </article>
+
+      <aside class="story-side">
+        <div class="scard">
+          <h4>Their path</h4>
+          <ul class="path-steps" id="sp-path"></ul>
+        </div>
+        <div class="scard">
+          <h4>About them</h4>
+          <div class="tag-list" id="sp-tags"></div>
+        </div>
+        <div class="parent-callout">
+          <div class="lab">For a parent reading this</div>
+          <p id="sp-parent"></p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="related">
+      <h3>More people like <span id="rel-name">Maryam</span></h3>
+      <div class="wall" id="related"><!-- injected --></div>
+    </div>
+  </div>
+  <div style="height:50px"></div>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#" onclick="goHome();return false;">
+          <span class="brand-tile">ada</span>
+          <span class="brand-name" style="color:#C9CDD7">National College<br>for Digital Skills</span>
+        </a>
+        <p>Ada Voices is part of Ada Manchester's recruitment platform — real stories, honestly told, from students across Greater Manchester's boroughs.</p>
+        <div class="consent-note"><span class="d"></span><span>Every story is published with the explicit, withdrawable consent of the student. We follow data-minimisation by design and never share contact details. (GDPR &amp; under-18 consent built into the content pipeline.)</span></div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#stories" onclick="goHome('stories')">All stories</a></li>
+          <li><a href="#discover" onclick="goHome('discover')">How people find us</a></li>
+          <li><a href="#parents" onclick="goHome('parents')">For parents &amp; carers</a></li>
+          <li><a href="#openday" onclick="goHome('openday')">Book an open day</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Digital T Levels</h5>
+        <ul>
+          <li><a href="#stories" onclick="goHome('stories')">Production, Design &amp; Development</a></li>
+          <li><a href="#stories" onclick="goHome('stories')">Digital Support Services</a></li>
+          <li><a href="#stories" onclick="goHome('stories')">Digital Business Services</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Ada, the National College for Digital Skills — Manchester &amp; London.</span>
+      <span>Prototype — Team Khama · Ada Digital Technology Hackathon</span>
+    </div>
+  </div>
+</footer>
+<div class="demo-flag">PROTOTYPE — names, quotes, employer/destination data and figures shown are illustrative placeholders for demonstration. Logo is a recreation; swap in Ada's official brand assets for production.</div>
+
+<script src="js/filter.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>

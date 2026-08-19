@@ -1,17 +1,3 @@
-/* ============================================================
-   ADA VOICES - API server (MVP build)
-   ------------------------------------------------------------
-   Node.js + Express. Serves the static front end from /public
-   and exposes a small JSON API over an in-memory mock database
-   (data/stories.js). Defensive layers on the write endpoints:
-
-     1. rate limiting  - fixed-window, per IP, dependency-free
-     2. validation     - required fields, email format
-     3. sanitisation   - reject <script>, escape all other HTML
-
-   The store is deliberately in-memory for the PoC: state resets
-   on restart. See the technical report (RCA) for the trade-off.
-   ============================================================ */
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -80,7 +66,6 @@ app.get('/api/stories/:id', (req, res) => {
   res.status(200).json(story);
 });
 
-/* ---------- write endpoints ---------- */
 
 // POST /api/stories/submit - submit a new story with XSS prevention
 app.post('/api/stories/submit', rateLimit, (req, res) => {
@@ -130,7 +115,7 @@ app.post('/api/openday/register', rateLimit, (req, res) => {
 
 /* ---------- boot ---------- */
 
-// Export app for Jest testing; start server if run directly
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`Ada Voices running at http://localhost:${port}`);

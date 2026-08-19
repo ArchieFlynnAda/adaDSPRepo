@@ -1,11 +1,3 @@
-/* ============================================================
-   Ada Voices API - Jest + Supertest suite
-   ------------------------------------------------------------
-   TC1-TC5 are the original five cases from the planning phase.
-   TC6-TC9 were added during the build to cover the new detail
-   endpoint, HTML neutralisation, and the rate limiter.
-   TC9 must run LAST: it deliberately exhausts the rate window.
-   ============================================================ */
 const request = require('supertest');
 const app = require('./server');
 

@@ -1,8 +1,3 @@
-/* ============================================================
-   Ada Voices filter engine - unit tests (pure logic, no HTTP)
-   Verifies the AND-intersection semantics described in the
-   technical design, including the deliberate empty state.
-   ============================================================ */
 const AdaFilter = require('./public/js/filter');
 
 const FIXTURES = [
